@@ -4,6 +4,8 @@ private:
 	std::string _name;
 	Room* _currentRoom;
 public:
-	Personne(std::string p_name);
+	std::string getName() const {
+		return name;
+	};
 	Room* room() {return (_currentRoom);}
 };

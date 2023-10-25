@@ -1,5 +1,5 @@
-NAME			= Car
-HEADER			= car.hpp
+NAME			= School
+HEADER			= CourseFinishedForm.hpp Form.hpp NeedCourseCreationForm.hpp NeedMoreClassRoomForm.hpp SubscriptionToCourseForm.hpp Person.hpp Student.hpp Classroom.hpp Courtyard.hpp HeadmasterOffice.hpp Room.hpp SecretarialOffice.hpp StaffRestRoom.hpp Headmaster.hpp Professor.hpp Secretary.hpp Staff.hpp Course.hpp Event.hpp
 FLAGS			= -Wall -Wextra -Werror -std=c++98
 OBJ_PATH		= ./objs/
 SRC				= main.cpp

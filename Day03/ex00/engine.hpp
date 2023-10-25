@@ -25,9 +25,9 @@ public:
         }
     }
 
-    void accelerate(int speed) {
+    void accelerate(int _speed) {
         if (engineRunning) {
-            speed += speed;
+            speed += _speed;
             std::cout << "Aceleração para " << speed << " km/h." << std::endl;
         }
     }
