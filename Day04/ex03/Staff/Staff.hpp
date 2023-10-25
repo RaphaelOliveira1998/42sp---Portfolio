@@ -1,5 +1,7 @@
 #include "Person.hpp"
 #include <vector>
+#include "StaffList.hpp"
+#include "Form.hpp"
 #ifndef staff_hpp
 
 class Staff : public Person {
@@ -25,8 +27,9 @@ public:
     std::vector<Form*> getForms() {
         return staffList->getForms();
     }
-
-    class StaffList {
+};
+    
+class StaffList {
     private:
         std::vector<Form*> forms;
 
@@ -38,6 +41,6 @@ public:
         std::vector<Form*> getForms() {
             return forms;
         }
-    };
 };
+
 #endif

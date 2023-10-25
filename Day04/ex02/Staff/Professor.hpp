@@ -1,15 +1,29 @@
+// Professor.hpp
+#ifndef PROFESSOR_HPP
+#define PROFESSOR_HPP
+
+#include <string>
+#include <vector>
+#include "Course.hpp"
+
+
 class Professor : public Staff {
+private:
+    std::string name;
+    std::vector<Course*> courses;
+
 public:
-    Professor(const std::string& name) : name(name) {}
+    Professor(const std::string& profName) : name(profName), courses() {}
 
-    void createCourse() {
-        std::cout << "Professor " << name << " has created a new course." << std::endl;
-    }
-
-    std::string getName() const {
+    const std::string& getName() const {
         return name;
     }
 
-private:
-    std::string name;
+    const std::vector<Course*>& getCourses() const {
+        return courses;
+    }
+
+    void createCourse(Staff* staff, const std::string& courseName);
 };
+
+#endif

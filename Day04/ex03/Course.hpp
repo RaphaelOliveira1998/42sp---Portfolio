@@ -12,7 +12,7 @@ private:
     Professor* _responsible;
     std::vector<Student*> _students;
     int _numberOfClassesToGraduate;
-    int _maximumNumberOfStudents;
+    std::vector<Student*>::size_type _maximumNumberOfStudents;
 
 public:
     Course(std::string p_name);
@@ -56,7 +56,7 @@ public:
     }
 
     void removeStudent(Student* p_student) {
-        for (auto it = _students.begin(); it != _students.end(); ++it) {
+        for (std::vector<Student*>::iterator it = _students.begin(); it != _students.end(); ++it) {
             if (*it == p_student) {
                 _students.erase(it);
                 break;
@@ -65,8 +65,8 @@ public:
     }
 
     bool isEnrolled(Student* p_student) {
-        for (Student* student : _students) {
-            if (student == p_student) {
+        for (std::vector<Student*>::iterator it = _students.begin(); it != _students.end(); ++it) {
+            if (*it == p_student) {
                 return true;
             }
         }
@@ -75,7 +75,7 @@ public:
 };
 
 Course::Course(std::string p_name)
-    : _name(p_name), _responsible(nullptr), _numberOfClassesToGraduate(0), _maximumNumberOfStudents(0) {
+    : _name(p_name), _responsible(NULL), _numberOfClassesToGraduate(0), _maximumNumberOfStudents(0) {
 }
 
 std::vector<Course*> Course::CourseList;

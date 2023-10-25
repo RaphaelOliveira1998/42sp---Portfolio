@@ -1,32 +1,29 @@
 #include "Staff.hpp" 
-#include "Form.hpp"  
+#include "Form.hpp"
+#include "CourseFinishedForm.hpp"
+#include "NeedCourseCreationForm.hpp"
+#include "NeedMoreClassRoomForm.hpp"
+#include "SubscriptionToCourseForm.hpp"
+#ifndef secretary_hpp
+
 class Secretary : public Staff {
 public:
-    Secretary() {
-        
-    }
-
-    Form* createForm(FormType p_formType) { 
-        Form* newForm = nullptr;
-        switch (p_formType) {
+    Form* createForm(FormType formType) {
+        switch (formType) {
             case FormType::CourseFinished:
-                newForm = new CourseFinishedForm();
-                break;
+                return new CourseFinishedForm();
             case FormType::NeedMoreClassRoom:
-                newForm = new NeedMoreClassRoomForm();
-                break;
+                return new NeedMoreClassRoomForm();
             case FormType::NeedCourseCreation:
-                newForm = new NeedCourseCreationForm();
-                break;
+                return new NeedCourseCreationForm();
             case FormType::SubscriptionToCourse:
-                newForm = new SubscriptionToCourseForm();
-                break;
+                return new SubscriptionToCourseForm();
         }
-        return newForm;
+        return NULL; 
     }
 
-    void archiveForm() {
+    void fillForm(Form* form, const std::string& data) {
+        form->fillForm(data);
     }
-
-    
 };
+#endif

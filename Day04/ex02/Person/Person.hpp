@@ -1,11 +1,13 @@
 class Person
 {
 private:
-	std::string _name;
+	std::string name;
 	Room* _currentRoom;
 public:
 	std::string getName() const {
 		return name;
 	};
-	Room* room() {return (_currentRoom);}
+	Room* room() {
+		return (_currentRoom);
+	}
 };

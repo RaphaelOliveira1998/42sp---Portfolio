@@ -11,32 +11,31 @@ private:
 public:
     Student(const std::string& studentName) : name(studentName) {}
 
-    void attendClass(Classroom* p_classroom) {
+    void Student::attendClass(Course* p_course) {
         bool isEnrolled = false;
         for (Course* course : _subscribedCourses) {
-            if (course->isEnrolled(p_classroom)) {
-                isEnrolled = true;
-                break;
-            }
-        }
-
-        if (isEnrolled) {
-            p_classroom->addStudent(this);
-        }
-    }
-
-    void exitClass(Classroom* p_classroom) {
-        bool isEnrolled = false;
-        for (Course* course : _subscribedCourses) {
-            if (course->isEnrolled(p_classroom)) {
+            if (course == p_course) {
                 isEnrolled = true;
                 break;
             }
         }
         if (isEnrolled) {
-            p_classroom->removeStudent(this);
+        } else {
         }
     }
+
+    void Student::exitClass(Course* p_course) {
+        bool isEnrolled = false;
+        for (Course* course : _subscribedCourses) {
+            if (course == p_course) {
+                isEnrolled = true;
+                break;
+            }
+        }
+        if (isEnrolled) {
+        } else {
+        }
+    }   
 
     void graduate(Course* p_course) {
         for (size_t i = 0; i < _subscribedCourses.size(); ++i) {
@@ -59,7 +58,7 @@ public:
         if (index < _subscribedCourses.size()) {
             return _subscribedCourses[index];
         }
-        return nullptr;
+        return NULL;
     }
 };
 #endif

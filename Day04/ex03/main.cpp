@@ -8,40 +8,30 @@
 #include "Headmaster.hpp"
 #include "Classroom.hpp"
 
-
 int main() {
 
     Staff staff;
     
-    NeedMoreClassRoomForm needClassRoomForm;
-    NeedCourseCreationForm needCourseCreationForm;
-    SubscriptionToCourseForm subscriptionForm;
-
-    needClassRoomForm.fillFormInfo();
-    needCourseCreationForm.fillFormInfo();
-    subscriptionForm.fillFormInfo();
-       
-    needClassRoomForm.execute();        
-    needCourseCreationForm.execute();    
-    subscriptionForm.execute();
-
     Staff* staffPtr = staff.getStaff();
     std::vector<Form*> forms = staff.getForms();
 
     Headmaster headmaster;
+    Secretary secretary;
     Professor prof("Professor Jorge");
-    Classroom classroom(1, 30);
-    Course course("Matemática");
     Student student("Estudante Raphael");
 
-    prof.createCourse();
-    course.subscribe(&student);
-    student.attendClass(&classroom);
+    prof.createCourse(secretary.getStaff(), "Mathematics 101");
+
     
-    CourseFinishedForm courseFinishedForm;
-    courseFinishedForm.fillFormInfo();
-    headmaster.signAndExecuteForm(&courseFinishedForm);
-    
+
+    Form* form = secretary.createForm(FormType::CourseFinished);
+    secretary.fillForm(form, "Matematica 101 completa.");
+
+    headmaster.receiveForm(form);
+
+    headmaster.approveForms();
+
+
 
     return 0;
 }

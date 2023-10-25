@@ -1,3 +1,8 @@
+#ifndef secretarialoffice_hpp
+#include "Room.hpp"
+#include "Form.hpp"
+#include <vector>
+
 class SecretarialOffice: public Room
 {
 private:
@@ -6,3 +11,4 @@ private:
 public:
 
 };
+#endif
