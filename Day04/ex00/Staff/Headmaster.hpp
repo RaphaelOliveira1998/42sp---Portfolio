@@ -1,8 +1,14 @@
-class Headmaster : public Staff
-{
-private:
-	std::vector<Form*> _formToValidate;
-	
-public:
-	void receiveForm(Form* p_form);
+// Headmaster.hpp
+#ifndef HEADMASTER_HPP
+
+#include "Form.hpp"
+#include "Secretary.hpp"
+#include "Course.hpp"
+#include "Professor.hpp"
+#include "Student.hpp"
+#include <vector>
+
+class Headmaster : public Staff {
+
 };
+#endif

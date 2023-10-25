@@ -11,21 +11,12 @@
 int main() {
 
     Staff staff;
-    
-    Staff* staffPtr = staff.getStaff();
-    std::vector<Form*> forms = staff.getForms();
+
 
     Headmaster headmaster;
+    Secretary secretary;
     Professor prof("Professor Jorge");
-    Classroom classroom("Sala 01", 1, 30);
-    Course course("Matemática");
     Student student("Estudante Raphael");
-
-    prof.createCourse();
-    course.subscribe(&student);
-    student.attendClass(&course);
-    
-    
 
     return 0;
 }

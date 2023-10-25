@@ -1,8 +1,8 @@
-class SecretarialOffice: public Room
-{
-private:
-	std::vector<Form*> _archivedForms;
+#ifndef secretarialoffice_hpp
+#include <vector>
 
-public:
+class SecretarialOffice: public Room {
+
 
 };
+#endif

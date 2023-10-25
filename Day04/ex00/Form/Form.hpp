@@ -1,21 +1,15 @@
-class Form
-{
-private:
-	FormType _formType;
+#include <iostream>
+#include <string>
+#ifndef form_hpp
 
-public:
-	Form(FormType p_formType)
-	{
+// enum class FormType {
+// 	CourseFinished,
+// 	NeedMoreClassRoom,
+// 	NeedCourseCreation,
+// 	SubscriptionToCourse
+// };
 
-	}
+class Form {
 
-	virtual void execute() = 0;
 };
-
-enum class FormType
-{
-	CourseFinished
-	NeedMoreClassRoom
-	NeedCourseCreation
-	SubscriptionToCourse
-};
+#endif

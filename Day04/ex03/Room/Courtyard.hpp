@@ -1,11 +1,7 @@
 #ifndef courtyard_hpp
-#include "Room.hpp"
 
-class Courtyard : public Room
-{
-private:
+class Courtyard : public Room {
 
-public:
 
 };
 #endif

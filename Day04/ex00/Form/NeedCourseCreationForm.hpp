@@ -1,7 +1,6 @@
-class NeedCourseCreationForm : public Form
-{
-private:
+#ifndef needcoursecreationform_hpp
 
-public:
-	void execute();
+class NeedCourseCreationForm : public Form {
+
 };
+#endif

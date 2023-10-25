@@ -1,17 +1,8 @@
-#include "Person.hpp"
 #ifndef staff_hpp
+#define staff_hpp
+#include "Person.hpp"
 
-class Staff : public Person
-{
-private:
-	StaffList* staffList;
-public:
-	void sign(Form* p_form);
-	Staff();
-
-struct StaffList	{
-	/* data */
-};
+class Staff : public Person {
 
 };
 #endif

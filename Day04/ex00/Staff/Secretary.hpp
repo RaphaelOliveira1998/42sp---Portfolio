@@ -1,8 +1,6 @@
-class Secretary : public Staff
-{
-private:
+#ifndef secretary_hpp
 
-public:
-	Form* createForm(FormType p_formType);
-	void archiveForm();
+class Secretary : public Staff {
+
 };
+#endif

@@ -1,10 +1,13 @@
-class Professor : public Staff
-{
-private:
-	Course* _currentCourse;
+// Professor.hpp
+#ifndef PROFESSOR_HPP
+#define PROFESSOR_HPP
 
-public:
-	void assignCourse(Course* p_course);
-	void doClass();
-	void closeCourse();
+#include <string>
+#include <vector>
+
+
+class Professor : public Staff {
+
 };
+
+#endif

@@ -1,7 +1,7 @@
-class StaffRestRoom : public Room
-{
-private:
+#ifndef staffrestroom_hpp
 
-public:
+class StaffRestRoom : public Room {
+
 
 };
+#endif

@@ -1,7 +1,7 @@
-class HeadmasterOffice : public Room
-{
-private:
+#ifndef headmasteroffice_hpp
 
-public:
+class HeadmasterOffice : public Room {
+
 
 };
+#endif

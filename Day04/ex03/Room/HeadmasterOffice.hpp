@@ -1,11 +1,7 @@
 #ifndef headmasteroffice_hpp
-#include "Room.hpp"
 
-class HeadmasterOffice : public Room
-{
-private:
+class HeadmasterOffice : public Room {
 
-public:
 
 };
 #endif

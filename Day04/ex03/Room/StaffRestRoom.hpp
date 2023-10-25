@@ -1,11 +1,7 @@
 #ifndef staffrestroom_hpp
-#include "Room.hpp"
 
-class StaffRestRoom : public Room
-{
-private:
+class StaffRestRoom : public Room {
 
-public:
 
 };
 #endif

@@ -1,10 +1,9 @@
-class Student : public Person
-{
-private:
-	std::vector<Course*> _subscribedCourse;
+#ifndef student_hpp
+#include <vector>
 
-public:
-	void attendClass(Classroom* p_classroom);
-	void exitClass();
-	void graduate(Course* p_course);
+class Classroom;
+
+class Student : public Person {
+
 };
+#endif

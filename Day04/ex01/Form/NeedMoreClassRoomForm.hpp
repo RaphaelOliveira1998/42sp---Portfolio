@@ -1,7 +1,7 @@
-class NeedMoreClassRoomForm : public Form
-{
-private:
+#ifndef needmoreclassroomform_hpp
+#include <iostream>
 
-public:
-	void execute();
+class NeedMoreClassRoomForm : public Form {
+
 };
+#endif

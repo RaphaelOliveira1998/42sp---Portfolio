@@ -1,7 +1,7 @@
-class CourseFinishedForm : public Form
-{
-private:
+#ifndef coursefinishedform_hpp
+#include <iostream>
 
-public:
-	void execute();
+class CourseFinishedForm : public Form {
+
 };
+#endif

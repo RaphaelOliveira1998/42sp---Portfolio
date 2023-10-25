@@ -1,7 +1,7 @@
-class SubscriptionToCourseForm : public Form
-{
-private:
+#ifndef subscriptiontocourseform_hpp
+#include <iostream>
 
-public:
-	void execute();
+class SubscriptionToCourseForm : public Form {
+
 };
+#endif

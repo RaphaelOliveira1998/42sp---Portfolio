@@ -1,7 +1,7 @@
-class Courtyard : public Room
-{
-private:
+#ifndef courtyard_hpp
 
-public:
+class Courtyard : public Room {
+
 
 };
+#endif

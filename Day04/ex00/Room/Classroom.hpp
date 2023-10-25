@@ -1,9 +1,6 @@
-class Classroom : public Room
-{
-private:
-	Course* _currentRoom;
+#ifndef classroom_hpp
 
-public:
-	Classroom();
-	void assignCourse(Course* p_course);
+class Classroom : public Room {
+
 };
+#endif

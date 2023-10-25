@@ -1,12 +1,14 @@
-#include <iostream>
-#include <string>
-#include "Form.hpp"
+// Headmaster.hpp
+#ifndef HEADMASTER_HPP
 
-class Headmaster : public Staff
-{
-public:
-    void signAndExecuteForm(Form* form) {
-        form->sign();
-        form->execute();
-    }
+#include "Form.hpp"
+#include "Secretary.hpp"
+#include "Course.hpp"
+#include "Professor.hpp"
+#include "Student.hpp"
+#include <vector>
+
+class Headmaster : public Staff {
+
 };
+#endif
