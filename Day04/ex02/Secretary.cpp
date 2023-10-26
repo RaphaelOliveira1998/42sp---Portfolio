@@ -8,8 +8,8 @@ Form* Secretary::createForm(FormType type) {
     return form;
 }
 
-void Secretary::fillForm(Form* form, const std::string& information) {
-    form->setInformation(information);
+void Secretary::fillForm(Form* form, const std::string& studentName) {
+    form->setInformation(studentName);
 }
 
 void Secretary::submitForm(Headmaster& headmaster, Form* form) {
