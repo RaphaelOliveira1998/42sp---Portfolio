@@ -2,7 +2,7 @@ NAME			= School
 HEADER			= -I"./" -I"./Person" -I"./Room" -I"./Staff" -I"./Form"
 FLAGS			= -Wall -Wextra -Werror -std=c++98
 OBJ_PATH		= ./objs/
-SRC				= main.cpp Student.cpp Staff.cpp Course.cpp Room.cpp
+SRC				= main.cpp Student.cpp Staff.cpp Course.cpp Room.cpp Secretary.cpp Form.cpp Headmaster.cpp
 OBJ				= $(SRC:%.cpp=$(OBJ_PATH)%.o)
 
 all: $(NAME)

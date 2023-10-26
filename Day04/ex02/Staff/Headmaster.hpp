@@ -1,14 +1,10 @@
-// Headmaster.hpp
-#ifndef HEADMASTER_HPP
+#pragma once
 
 #include "Form.hpp"
-#include "Secretary.hpp"
-#include "Course.hpp"
-#include "Professor.hpp"
-#include "Student.hpp"
-#include <vector>
 
-class Headmaster : public Staff {
-
+class Headmaster {
+public:
+    void signForm(Form* form);
+    void executeForm(Form* form);
 };
-#endif
+

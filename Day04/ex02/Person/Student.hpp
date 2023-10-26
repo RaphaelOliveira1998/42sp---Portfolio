@@ -1,7 +1,6 @@
 #ifndef student_hpp
 #include <vector>
 #include <iostream>
-class Person;
 
 class Student {
 public:
