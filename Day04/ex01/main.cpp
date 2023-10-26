@@ -1,56 +1,48 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include "Person.hpp"
 #include "Student.hpp"
 #include "Staff.hpp"
 #include "Course.hpp"
 #include "Room.hpp"
 
 int main() {
+    Student student1("Alice", 1);
+    Staff secretaria("Maria", 000);
+    Course course1("Física", 666);
+    Room room1("Sala 01", 99);
 
-    Student studentList;
-    Staff staffList;
-    Course courseList;
-    Room roomList;
+    StudentList::addStudent(&student1);
+    StaffList::addStaffMember(&secretaria);
+    CourseList::addCourse(&course1);
+    RoomList::addRoom(&room1);
 
-    studentList.addStudent(Student("Alice", 1));
-    studentList.addStudent(Student("Bob", 2));
 
-    staffList.addStaffMember(Staff("John", 101));
-    staffList.addStaffMember(Staff("Emily", 102));
-
-    courseList.addCourse(Course("Math", 201));
-    courseList.addCourse(Course("History", 202));
-
-    roomList.addRoom(Room("Room 101", 301));
-    roomList.addRoom(Room("Room 102", 302));
-
-    // Removendo um aluno, membro da equipe, curso e sala
-    studentList.removeStudent(2);
-    staffList.removeStaffMember(101);
-    courseList.removeCourse(201);
-    roomList.removeRoom(302);
-
-    // Exibindo o estado atual das listas
-    std::cout << "Students:" << std::endl;
-    for (const Student& student : studentList.students) {
-        std::cout << "Student Name: " << student.name << ", ID: " << student.studentID << std::endl;
+    for (size_t i = 0; i < StudentList::students.size(); i++) {
+        Student* student = StudentList::students[i];
+        std::cout << "Name: " << student->name << ", studant ID: " << student->studentID << std::endl;
     }
 
-    std::cout << "Staff Members:" << std::endl;
-    for (const Staff& staff : staffList.staffMembers) {
-        std::cout << "Staff Name: " << staff.name << ", ID: " << staff.staffID << std::endl;
+    for (size_t i = 0; i < StaffList::staffs.size(); i++) {
+        Staff* staff = StaffList::staffs[i];
+        std::cout << "Name: " << staff->name << ", Staff ID: " << staff->staffID << std::endl;
     }
 
-    std::cout << "Courses:" << std::endl;
-    for (const Course& course : courseList.courses) {
-        std::cout << "Course Name: " << course.name << ", ID: " << course.courseID << std::endl;
+    for (size_t i = 0; i < CourseList::courses.size(); i++) {
+        Course* course = CourseList::courses[i];
+        std::cout << "Name: " << course->name << ", Course ID: " << course->courseID << std::endl;
     }
 
-    std::cout << "Rooms:" << std::endl;
-    for (const Room& room : roomList.rooms) {
-        std::cout << "Room Name: " << room.name << ", ID: " << room.roomID << std::endl;
+    for (size_t i = 0; i < RoomList::rooms.size(); i++) {
+        Room* room = RoomList::rooms[i];
+        std::cout << "Name: " << room->name << ", Room ID: " << room->roomID << std::endl;
     }
 
+    StudentList::removeStudent(1);
+    StaffList::removeStaff(000);
+    CourseList::removeCourse(&course1);
+    RoomList::removeRoom(&room1);
 
     return 0;
 }
