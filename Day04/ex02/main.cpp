@@ -57,9 +57,9 @@ int main() {
     roomList.removeRoom(99);
 
     Form* courseFinishedForm = secretary.createForm(CourseFinished);
-    std::string studentName = "Nome do Estudante";
+    std::string studentName = "Maria";
     Form* NeedMoreClassRoomForm = secretary.createForm(NeedMoreClassRoom);
-    std::string studentName1 = "Nome do Estudante";
+    std::string studentName1 = "Eduarda";
 
     secretary.fillForm(courseFinishedForm, studentName);
     secretary.fillForm(NeedMoreClassRoomForm, studentName1);
@@ -74,13 +74,13 @@ int main() {
     headmaster.executeForm(NeedMoreClassRoomForm);
 
     if (courseFinishedForm->isFormSigned() && courseFinishedForm->isFormExecuted()) {
-        std::cout << "O formulário de matemática foi assinado e executado com sucesso!" << std::endl;
+        std::cout << "O formulário de matemática solicitado por " << studentName << " foi assinado e executado com sucesso!" << std::endl;
     } else {
         std::cout << "O formulário não foi completamente processado." << std::endl;
     }
 
     if (NeedMoreClassRoomForm->isFormSigned() && NeedMoreClassRoomForm->isFormExecuted()) {
-        std::cout << "O formulário de física foi assinado e executado com sucesso!" << std::endl;
+        std::cout << "O formulário de física solicitado por " << studentName1 << " foi assinado e executado com sucesso!" << std::endl;
     } else {
         std::cout << "O formulário 2 não foi completamente processado." << std::endl;
     }
