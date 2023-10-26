@@ -8,22 +8,27 @@
 #include "Room.hpp"
 
 int main() {
-    Student student1("Alice", 1);
-    Staff secretaria("Maria", 000);
-    Course course1("Física", 666);
-    Room room1("Sala 01", 99);
 
-    StudentList::addStudent(&student1);
-    StaffList::addStaffMember(&secretaria);
-    CourseList::addCourse(&course1);
-    RoomList::addRoom(&room1);
+
+    StudentList& studentList = StudentList::getInstance();
+    Student student1("Alice", 1);
+    Student student2("Mari", 2);
+    //Staff secretaria("Maria", 000);
+    //Course course1("Física", 666);
+    //Room room1("Sala 01", 99);
+
+    studentList.addStudent(&student1);
+    studentList.addStudent(&student2);
+    //StaffList::addStaffMember(&secretaria);
+    //CourseList::addCourse(&course1);
+    //RoomList::addRoom(&room1);
     
 
 
 
-    for (size_t i = 0; i < StudentList::students.size(); i++) {
-        Student* student = StudentList::students[i];
-        std::cout << "Name: " << student->name << ", studant ID: " << student->studentID << std::endl;
+    for (size_t i = 0; i < studentList.students.size(); i++) {
+        Student* student = studentList.students[i];
+        std::cout << "Name: " << student->name << ", student ID: " << student->studentID << std::endl;
     }
 
     for (size_t i = 0; i < StaffList::staffs.size(); i++) {

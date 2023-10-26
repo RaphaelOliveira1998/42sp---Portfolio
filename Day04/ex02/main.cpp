@@ -15,6 +15,8 @@ int main() {
     Secretary secretary;
     Headmaster headmaster;
 
+    StudentList& studentList = StudentList::getInstance();
+
     Student student1("Alice", 1);
     Staff faxineira("Maria", 000);
     Course course1("Física", 666);
@@ -27,7 +29,7 @@ int main() {
 
     for (size_t i = 0; i < StudentList::students.size(); i++) {
         Student* student = StudentList::students[i];
-        std::cout << "Name: " << student->name << ", studant ID: " << student->studentID << std::endl;
+        std::cout << "Name: " << student->name << ", student ID: " << student->studentID << std::endl;
     }
 
     for (size_t i = 0; i < StaffList::staffs.size(); i++) {
