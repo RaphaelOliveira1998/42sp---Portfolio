@@ -9,11 +9,11 @@ void StaffList::addStaffMember(Staff* staff) {
 }
 
 void StaffList::removeStaffMember(int staffID) {
-    for (std::vector<Staff*>::iterator it = staffs.begin(); it != staffs.end(); ++it) {
-    if ((*it)->staffID == staffID) {
-        delete *it;
-        staffs.erase(it);
-        break; 
+    for (std::vector<Staff*>::iterator it = staffs.begin(); it != staffs.end(); ) {
+        if ((*it)->staffID == staffID) {
+            it = staffs.erase(it); 
+        } else {
+            ++it;
         }
     }
 }

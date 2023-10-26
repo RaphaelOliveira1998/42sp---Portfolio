@@ -9,12 +9,11 @@ void StudentList::addStudent(Student* student) {
 }
 
 void StudentList::removeStudent(int studentID) {
-    for (std::vector<Student*>::iterator it = students.begin(); it != students.end(); ++it) {
+    for (std::vector<Student*>::iterator it = students.begin(); it != students.end(); ) {
         if ((*it)->studentID == studentID) {
-            delete *it;
-            *it = NULL;
-            students.erase(it);
-            break; 
+            it = students.erase(it); 
+        } else {
+            ++it;
         }
     }
 }

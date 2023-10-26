@@ -9,11 +9,11 @@ void RoomList::addRoom(Room* room) {
 }
 
 void RoomList::removeRoom(int roomID) {
-    for (std::vector<Room*>::iterator it = rooms.begin(); it != rooms.end(); ++it) {
+    for (std::vector<Room*>::iterator it = rooms.begin(); it != rooms.end(); ) {
         if ((*it)->roomID == roomID) {
-            delete *it;
-            rooms.erase(it);
-            break; 
+            it = rooms.erase(it); 
+        } else {
+            ++it;
         }
     }
 }

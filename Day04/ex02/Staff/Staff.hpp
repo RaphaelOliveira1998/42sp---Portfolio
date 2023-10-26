@@ -5,7 +5,7 @@
 #include <algorithm>
 
 
-class Staff : public Person {
+class Staff {
 public:
     std::string name;
     int staffID;

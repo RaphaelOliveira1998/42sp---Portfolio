@@ -1,8 +1,9 @@
 #ifndef student_hpp
 #include <vector>
 #include <iostream>
+class Person;
 
-class Student : public Person {
+class Student {
 public:
     std::string name;
     int studentID;

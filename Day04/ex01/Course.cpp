@@ -9,11 +9,11 @@ void CourseList::addCourse(Course* course) {
 }
 
 void CourseList::removeCourse(int courseID) {
-    for (std::vector<Course*>::iterator it = courses.begin(); it != courses.end(); ++it) {
+    for (std::vector<Course*>::iterator it = courses.begin(); it != courses.end(); ) {
         if ((*it)->courseID == courseID) {
-            delete *it;
-            courses.erase(it);
-            break; 
+            it = courses.erase(it); 
+        } else {
+            ++it;
         }
     }
 }

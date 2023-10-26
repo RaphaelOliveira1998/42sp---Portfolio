@@ -17,6 +17,8 @@ int main() {
     StaffList::addStaffMember(&secretaria);
     CourseList::addCourse(&course1);
     RoomList::addRoom(&room1);
+    
+
 
 
     for (size_t i = 0; i < StudentList::students.size(); i++) {
@@ -40,9 +42,11 @@ int main() {
     }
 
     StudentList::removeStudent(1);
-    StaffList::removeStaff(000);
-    CourseList::removeCourse(&course1);
-    RoomList::removeRoom(&room1);
+    StaffList::removeStaffMember(000);
+    CourseList::removeCourse(666);
+    RoomList::removeRoom(99);
+
+   
 
     return 0;
 }
