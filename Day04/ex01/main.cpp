@@ -11,17 +11,19 @@ int main() {
 
 
     StudentList& studentList = StudentList::getInstance();
-    Student student1("Alice", 1);
-    Student student2("Mari", 2);
-    //Staff secretaria("Maria", 000);
-    //Course course1("Física", 666);
-    //Room room1("Sala 01", 99);
+    StaffList& staffList = StaffList::getInstance();
+    CourseList& courseList = CourseList::getInstance();
+    RoomList& roomList = RoomList::getInstance();
 
-    studentList.addStudent(&student1);
-    studentList.addStudent(&student2);
-    //StaffList::addStaffMember(&secretaria);
-    //CourseList::addCourse(&course1);
-    //RoomList::addRoom(&room1);
+    Student student("Alice", 1);
+    Staff secretaria("Maria", 000);
+    Course course("Física", 666);
+    Room room("Sala 01", 99);
+
+    studentList.addStudent(&student);
+    staffList.addStaffMember(&secretaria);
+    courseList.addCourse(&course);
+    roomList.addRoom(&room);
     
 
 
@@ -46,10 +48,10 @@ int main() {
         std::cout << "Name: " << room->name << ", Room ID: " << room->roomID << std::endl;
     }
 
-    StudentList::removeStudent(1);
-    StaffList::removeStaffMember(000);
-    CourseList::removeCourse(666);
-    RoomList::removeRoom(99);
+    studentList.removeStudent(1);
+    staffList.removeStaffMember(000);
+    courseList.removeCourse(666);
+    roomList.removeRoom(99);
 
    
 

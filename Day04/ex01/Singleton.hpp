@@ -1,4 +1,5 @@
 #ifndef Singleton_hpp
+#define Singleton_hpp
 #include <iostream>
 
 template <typename T>
