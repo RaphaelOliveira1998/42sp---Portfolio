@@ -9,6 +9,7 @@
 #include "Secretary.hpp"
 #include "Headmaster.hpp"
 #include "Form.hpp"
+#include "Singleton.hpp"
 
 int main() {
 
@@ -16,19 +17,22 @@ int main() {
     Headmaster headmaster;
 
     StudentList& studentList = StudentList::getInstance();
+    StaffList& staffList = StaffList::getInstance();
+    CourseList& courseList = CourseList::getInstance();
+    RoomList& roomList = RoomList::getInstance();
 
-    Student student1("Alice", 1);
+    Student student("Alice", 1);
     Staff faxineira("Maria", 000);
-    Course course1("Física", 666);
-    Room room1("Sala 01", 99);
+    Course course("Física", 666);
+    Room room("Sala 01", 99);
 
-    StudentList::addStudent(&student1);
-    StaffList::addStaffMember(&faxineira);
-    CourseList::addCourse(&course1);
-    RoomList::addRoom(&room1);
+    studentList.addStudent(&student);
+    staffList.addStaffMember(&faxineira);
+    courseList.addCourse(&course);
+    roomList.addRoom(&room);
 
-    for (size_t i = 0; i < StudentList::students.size(); i++) {
-        Student* student = StudentList::students[i];
+    for (size_t i = 0; i < studentList.students.size(); i++) {
+        Student* student = studentList.students[i];
         std::cout << "Name: " << student->name << ", student ID: " << student->studentID << std::endl;
     }
 
@@ -47,16 +51,15 @@ int main() {
         std::cout << "Name: " << room->name << ", Room ID: " << room->roomID << std::endl;
     }
 
-    StudentList::removeStudent(1);
-    StaffList::removeStaffMember(000);
-    CourseList::removeCourse(666);
-    RoomList::removeRoom(99);
+    studentList.removeStudent(1);
+    staffList.removeStaffMember(000);
+    courseList.removeCourse(666);
+    roomList.removeRoom(99);
 
     Form* courseFinishedForm = secretary.createForm(CourseFinished);
-    std::string studentName = "Maria";
+    std::string studentName = "Nome do Estudante";
     Form* NeedMoreClassRoomForm = secretary.createForm(NeedMoreClassRoom);
-    std::string studentName1 = "Eduarda";
-
+    std::string studentName1 = "Nome do Estudante";
 
     secretary.fillForm(courseFinishedForm, studentName);
     secretary.fillForm(NeedMoreClassRoomForm, studentName1);
@@ -71,13 +74,13 @@ int main() {
     headmaster.executeForm(NeedMoreClassRoomForm);
 
     if (courseFinishedForm->isFormSigned() && courseFinishedForm->isFormExecuted()) {
-        std::cout << "O formulário de matemática solicitado por " << studentName << " foi assinado e executado com sucesso!" << std::endl;
+        std::cout << "O formulário de matemática foi assinado e executado com sucesso!" << std::endl;
     } else {
         std::cout << "O formulário não foi completamente processado." << std::endl;
     }
 
     if (NeedMoreClassRoomForm->isFormSigned() && NeedMoreClassRoomForm->isFormExecuted()) {
-        std::cout << "O formulário de física solicitado por " << studentName1 << " foi assinado e executado com sucesso!" << std::endl;
+        std::cout << "O formulário de física foi assinado e executado com sucesso!" << std::endl;
     } else {
         std::cout << "O formulário 2 não foi completamente processado." << std::endl;
     }

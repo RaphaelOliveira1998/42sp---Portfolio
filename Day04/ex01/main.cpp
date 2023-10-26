@@ -8,29 +8,22 @@
 #include "Room.hpp"
 
 int main() {
-
-
-    StudentList& studentList = StudentList::getInstance();
-    StaffList& staffList = StaffList::getInstance();
-    CourseList& courseList = CourseList::getInstance();
-    RoomList& roomList = RoomList::getInstance();
-
-    Student student("Alice", 1);
+    Student student1("Alice", 1);
     Staff secretaria("Maria", 000);
-    Course course("Física", 666);
-    Room room("Sala 01", 99);
+    Course course1("Física", 666);
+    Room room1("Sala 01", 99);
 
-    studentList.addStudent(&student);
-    staffList.addStaffMember(&secretaria);
-    courseList.addCourse(&course);
-    roomList.addRoom(&room);
+    StudentList::addStudent(&student1);
+    StaffList::addStaffMember(&secretaria);
+    CourseList::addCourse(&course1);
+    RoomList::addRoom(&room1);
     
 
 
 
-    for (size_t i = 0; i < studentList.students.size(); i++) {
-        Student* student = studentList.students[i];
-        std::cout << "Name: " << student->name << ", student ID: " << student->studentID << std::endl;
+    for (size_t i = 0; i < StudentList::students.size(); i++) {
+        Student* student = StudentList::students[i];
+        std::cout << "Name: " << student->name << ", studant ID: " << student->studentID << std::endl;
     }
 
     for (size_t i = 0; i < StaffList::staffs.size(); i++) {
@@ -48,10 +41,10 @@ int main() {
         std::cout << "Name: " << room->name << ", Room ID: " << room->roomID << std::endl;
     }
 
-    studentList.removeStudent(1);
-    staffList.removeStaffMember(000);
-    courseList.removeCourse(666);
-    roomList.removeRoom(99);
+    StudentList::removeStudent(1);
+    StaffList::removeStaffMember(000);
+    CourseList::removeCourse(666);
+    RoomList::removeRoom(99);
 
    
 

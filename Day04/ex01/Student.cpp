@@ -4,7 +4,7 @@
 
 std::vector<Student*> StudentList::students;
 
-void StudentList::addStudent(Student *student) {
+void StudentList::addStudent(Student* student) {
     students.push_back(student);
 }
 

@@ -2,7 +2,8 @@
 #define staff_hpp
 #include <string>
 #include <vector>
-#include "Singleton.hpp"
+#include <algorithm>
+
 
 class Staff {
 public:
@@ -13,12 +14,10 @@ public:
 
 };
 
-class StaffList : public Singleton<StaffList> {
+class StaffList {
 public:
     static std::vector<Staff*> staffs;
     static void addStaffMember(Staff* staff); 
     static void removeStaffMember(int staffID);
-
-    friend class Singleton;
 };
 #endif
